@@ -1,0 +1,48 @@
+@import '../../../styles.scss';
+
+:host{
+    display: flex;
+    flex-direction: column;
+    background-color: $Cor-Principal;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 15px;
+    .card{
+        display: flex;
+        width: 90%;
+        height: 900px;
+        background-color: $Cor-Card;
+        margin: 0 auto;
+        margin-top: 15px;
+        border-radius: 15px;
+        border: solid 1px black;
+        box-shadow: 1px 2px 2px 0px rgba(9, 0, 0, 0.62);
+        overflow: hidden;
+        h4{
+            margin: 0 auto;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+       .lojas{
+        margin: 0 auto;
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte */
+        justify-content: space-between;
+       }
+
+       app-angular-google-maps{
+        margin-top: 50px;
+       }
+    }
+}
+@media (max-width: 450px) {
+
+    h4{
+        font-size: 0.9rem;
+    }
+    app-lojas {
+        margin: 0 auto;
+    }
+}

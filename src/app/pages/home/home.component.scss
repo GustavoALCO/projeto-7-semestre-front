@@ -1,0 +1,63 @@
+@import '../../../styles.scss';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: $Cor-Principal;
+    
+    .carousel {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 50px;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
+        border: 1px solid $Cor-Secundaria;
+    }
+
+    .destaque {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 50px;
+        column-count: 2;
+        column-gap: 30px;
+  
+    }
+
+    @media (width: 1440px) {
+        .destaque {
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 12px;
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+        
+        :host{
+            height: 100vh;
+            
+        }
+        .carousel {
+            width: 100%; 
+            margin-top: 25px;
+            border-radius: 0px;
+        }
+        .destaque {
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            grid-gap: 12px;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+    }
+}

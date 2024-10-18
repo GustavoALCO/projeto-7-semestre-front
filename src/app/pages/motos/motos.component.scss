@@ -1,0 +1,25 @@
+@import '../../../styles.scss';
+
+:host{
+    display: flex;
+    flex-direction: column;
+    background-color: $Cor-Principal;
+    height: 100%;
+
+    .carousel{
+        width: 70%;
+        min-width: 320px;
+        max-width: 1400px;
+        margin: 0 auto;
+        margin-top: 50px;
+        border-radius: 15px;
+        box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
+        border: 1px solid $Cor-Secundaria;
+        overflow: hidden;
+    }
+}
+@media (max-width: 400px){
+    :host{
+        height: 100vh;
+    }
+}

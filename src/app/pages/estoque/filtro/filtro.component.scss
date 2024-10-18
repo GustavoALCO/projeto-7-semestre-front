@@ -1,0 +1,75 @@
+@import "../../../../styles.scss";
+
+:host{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 1px solid black;
+    margin-left: 15px;
+    width: 250px;
+    height: 650px;
+    background-color: $Cor-Card;
+    padding-bottom: 20px;
+    
+    .inputs{
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: 0 auto;
+        input{
+            width: 80px;
+            border-radius: 5px;
+            background-color: rgb(250, 253, 255);
+            border:solid 1px $Cor-Secundaria;
+            box-shadow: 0px 0.5px 3px 0.2px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    }
+
+    .Titulos{
+        margin-left: 25px;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .marcas{
+        padding: 5px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        width: 85%;
+        height: 250px;
+        background-color: rgb(242, 242, 241);
+        border: solid 1px black;
+        margin: 0 auto;
+        border-radius: 5px;
+        overflow-y: auto; 
+        
+    }
+    .marcas::-webkit-scrollbar {
+        width: 8px;
+      }
+    .marcas::-webkit-scrollbar-thumb {
+        background-color: $Cor-Secundaria; 
+        border-radius: 5px; 
+      }
+
+      .buscar{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 30px;
+        border-radius: 5px;
+        background-color: $Cor-Admin;
+        border: solid 1px $Cor-Secundaria;
+        font-weight: bold;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        box-shadow: 0px 2px 3px 0.2px rgba(0, 0, 0, 0.7);
+      }
+      .buscar:active{
+        position: relative;
+        top: 1px;
+        
+      }
+}

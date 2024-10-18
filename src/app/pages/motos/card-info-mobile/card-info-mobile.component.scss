@@ -1,0 +1,86 @@
+@import "../../../../styles.scss";
+
+:host{
+    width: 100%;
+    background-color: $Cor-Card;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
+    .bold{
+    font-weight: bold;
+}
+
+    .top{
+        display: flex;
+        margin-left: 20px;
+        margin-top: 20px;
+
+        .title{
+            width: 60%;
+        }
+        .preco{
+        
+            .price{
+                font-weight: bold;
+                 padding: 10px;
+                 background-color: #4249A0;
+                 color: aliceblue;
+                 border-radius: 15px;
+                 box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
+            }
+        }
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        grid-template-rows: repeat(3, auto);   /* 3 linhas */
+        gap: 10px; /* Espaçamento entre os itens */
+        padding: 20px;
+
+        .grid-item{
+            display: flex;
+            flex-direction: column;
+            span{
+                font-size: 1.1rem;
+            }
+            p{
+                font-size: 0.8rem;
+            }
+        }
+      }
+      
+    .divisoria{
+        width: 80%;
+        border: solid 1px black;
+        margin: 0 auto;
+    }
+    .contatos{
+        margin-bottom: 10px;
+        margin-top: 5px;
+        justify-content: space-around;
+
+        .titulo{
+            display: flex;
+            span{
+                margin: 0 auto;
+                font-weight: bold;
+            }
+        }
+
+        .conteudo{
+            display: flex;
+        }
+        .contato{
+            width: 100%;
+            img{
+                margin-left: 10px;
+            }
+            span{
+                margin-left: 5px;
+            }
+        }
+    }
+}
