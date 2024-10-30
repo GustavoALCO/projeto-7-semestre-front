@@ -1,81 +1,62 @@
 @import "../../../../styles.scss";
 
-:host{
-    width: 70%;
-    min-width: 880px;
-    height: 500px;
-    border: solid 2px black;
-    margin: 0 auto;
-    margin-top: 10px;
-    border-radius: 10px;
+:host {
+    display: flex;
+    justify-content: space-around;
+    width: 1260px;
+    min-height: 420px;
+    max-height: 450px;
+    border-radius: 5px;
     background-color: $Cor-Card;
     box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
-    .bold{
-        font-weight:bold;
-    }
-
-    .title{
-        width: 80%;
-        margin: 0 auto;
-        margin-top: 50px;
-    }
-    .mid{
-        display: flex;
-        flex-direction: row;
-        width: 80%;
-        margin: 0 auto;
-        
-        .info{
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 50px;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
-            grid-gap: 12px;
-            font-size: 1.3rem;
-            .item {
-                width: 28%;
-                box-sizing: border-box; 
-                padding: 10px;
-                
-            }
-        }
-        .card{
-            border: solid 2px black;
-            height: 300px;
-            width: 300px;
-            margin: auto 0 0 auto;
-            background-color: $Cor-Card;
-            display: flex;
-            flex-direction: column;
-            .content{
-                margin: 0 auto;
-                padding: 10px;
-                
-                .banner{
-                    padding: 10px;
-                    background-color: #4249A0;
-                    text-align: center;
-                    border-radius: 15px;
-                    box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
-                }
-                .contato{
-                    display: flex;
-                    margin-top: 10px;
-                    span{
-                        margin-left: 5px;
-                        font-size: 1.2rem;
-                    }
-                }
-                .loja{
-                    display: flex;
-                    margin: auto 0;
-                }
-            }
-        }
-    }
-}
-@media (max-width: 1440px) {
-    span{
+    padding-top: 10px;
+    margin: 0 auto;
+    margin-top: 15px;
+    span {
+        text-align: center;
         font-size: 1rem;
     }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+    .mid {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        margin-bottom: 5px;
+
+        .info {
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            grid-gap: 30px;
+            margin-top: 10px;
+
+            .item {
+                text-align: center;
+                box-sizing: border-box;
+                padding: 10px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .rigth {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30%;
+    }
+
+    
 }
+

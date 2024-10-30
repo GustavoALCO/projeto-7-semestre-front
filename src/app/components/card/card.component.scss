@@ -4,8 +4,8 @@
     display: flex;
     flex-direction: column;
     border: solid 1px black;
-    min-width: 140px; 
-    min-height: 110px;
+    min-width: 120px; 
+    min-height: 260px;
     box-shadow: 3px 3px 2px 0px rgb(175, 175, 175);
     border-radius: 5px;
     overflow: hidden;
@@ -26,7 +26,8 @@
         flex-direction: column;
         margin: 10px;
         
-        h4{
+        .bold{
+            font-size: 1.2rem;
             font-weight: bold;
         }
 
@@ -39,6 +40,7 @@
         .preco{
             margin: auto 0 0 auto;
             margin-top: 10px;
+            font-weight: bold;
         }
     }
 }
@@ -52,24 +54,30 @@
     top: 1px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     :host{
-        width: auto; 
-        height: auto; 
        
-
-        h4{
-            font-size: 0.9rem;
+        .bold{
             font-weight: bold;
         }
 
-        h6, span{
-            font-size: 0.7rem;
+        .marca{
+            font-size: 0.8rem;
         }
 
+        .info{
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-between;
+            
+            span{
+                font-size: 0.7rem;
+            }
+        }
         
         .preco{
-            margin-top: 1px;
+            margin-top: 0px;
+            font-weight: bold;
         }
     }
 }

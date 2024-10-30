@@ -1,15 +1,18 @@
 :host{
     display: flex;
     flex-direction: column;
-    width: 450px;
+    width: 100%;
+    align-items: center;
+    .bold{
+        font-weight: bold;
+    }
     h5{
-        margin-top: 10px;
+       
         font-weight: bold;
     }
     span{
         margin-left: 5px;
-        margin-top: 10px;
-
+        margin-top: 5px;
     }
     .endereco{
         display: flex;
@@ -20,7 +23,7 @@
 
         img{
             margin-left: 5px;
-            margin-top: 13px;
+            margin-top: 5px;
             width: 20px;
             height: 20px;
         }
@@ -29,16 +32,27 @@
         display: flex;
     }
 }
+@media (max-width: 1440px) {
+
+    span{
+        font-size:0.8rem
+    }
+}
+
 @media (max-width: 450px) {
 
-    :host{
-        width: 320px;
-    }
+    
 
     h5{
         font-size: 0.8rem;
     }
     span{
         font-size:0.7rem
+    }
+}
+@media (max-width: 360px){
+
+    span{
+        font-size:0.6rem
     }
 }

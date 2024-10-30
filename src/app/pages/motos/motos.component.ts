@@ -5,6 +5,9 @@ import { CardInfoComponent } from "./card-info/card-info.component";
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { CardInfoMobileComponent } from "./card-info-mobile/card-info-mobile.component";
+import { CardComponent } from "../../components/card/card.component";
+import { DialogCarouselComponent } from './dialog-carousel/dialog-carousel.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-motos',
@@ -13,14 +16,15 @@ import { CardInfoMobileComponent } from "./card-info-mobile/card-info-mobile.com
     NavbarComponent,
     CardInfoComponent,
     CommonModule,
-    CardInfoMobileComponent],
+    CardInfoMobileComponent,
+    CardComponent],
   templateUrl: './motos.component.html',
   styleUrl: './motos.component.scss'
 })
 export class MotosComponent {
 
   breakpointObserver = inject(BreakpointObserver);
-
+  dialog = inject(MatDialog);
   mobile:boolean = false
 
   constructor() {
@@ -28,6 +32,15 @@ export class MotosComponent {
       '(max-width: 800px)' 
     ]).subscribe((result: BreakpointState) => {
         this.mobile = result.matches
+    });
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogCarouselComponent, {
+      width: '80vw',   
+      height: 'auto',  
+      maxWidth: '2000px',  
+      maxHeight: '2000px',
     });
   }
 }

@@ -16,10 +16,8 @@ export class CarouselMotosComponent {
 
   //variavel para atribuir as imagens futuralmente
   images = [
-    { url: 'https://imperiomotoszn.com.br/dados/auto/thumbnails/EX20240301171831_300x230_w_dd0bf011610f382d2081b47ddec10d8e.jpg', alt: 'Image 1' },
-    { url: 'https://imperiomotoszn.com.br/dados/auto/thumbnails/EX20240301171853_300x230_w_dd0bf011610f382d2081b47ddec10d8e.jpg', alt: 'Image 2' },
-    { url: 'https://imperiomotoszn.com.br/dados/auto/thumbnails/EX20240301171914_300x230_w_dd0bf011610f382d2081b47ddec10d8e.jpg', alt: 'Image 3' },
-    {url:'https://imperiomotoszn.com.br/dados/auto/thumbnails/EX20240301171935_300x230_w_dd0bf011610f382d2081b47ddec10d8e.jpg', alt:'imagem 4'}
-    
+    { url: 'assets/images/1600x900.jpg'},
+    {url: 'https://media.revistagq.com/photos/5ef1cd5609f9a6fc5dffaca0/master/w_1600,c_limit/nsc-F900XR-2560x1440.jpg.asset.1571140838882.jpg'},
+    {url: 'https://media.revistagq.com/photos/5ef1d03be3676ab95600ed8a/master/w_1600,c_limit/c4.png'},
   ];
 }

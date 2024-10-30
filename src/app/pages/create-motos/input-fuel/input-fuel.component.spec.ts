@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FiltroMobileComponent } from './filtro-mobile.component';
+import { InputFuelComponent } from './input-fuel.component';
 
-describe('FiltroMobileComponent', () => {
-  let component: FiltroMobileComponent;
-  let fixture: ComponentFixture<FiltroMobileComponent>;
+describe('InputFuelComponent', () => {
+  let component: InputFuelComponent;
+  let fixture: ComponentFixture<InputFuelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FiltroMobileComponent]
+      imports: [InputFuelComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FiltroMobileComponent);
+    fixture = TestBed.createComponent(InputFuelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

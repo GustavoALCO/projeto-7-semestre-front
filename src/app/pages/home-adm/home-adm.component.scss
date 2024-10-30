@@ -1,0 +1,28 @@
+@import '../../../styles.scss';
+
+:host{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: $Cor-Secundaria;
+    color: $Cor-Card;
+    
+    .left{
+        display: flex;
+        flex-direction: column;    
+        height: 100%;
+        width: 320px;
+        border: solid 1px $Cor-Admin;
+        align-items: center;
+        
+         
+        .image{
+            margin:  0 auto;
+            height: 200px;
+            img{
+                width: 100px;
+            }
+        }
+          
+    }
+}

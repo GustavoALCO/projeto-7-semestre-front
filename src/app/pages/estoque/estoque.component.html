@@ -1,13 +1,10 @@
 <app-navbar></app-navbar>
 
-<div class="content">
-    <app-filtro></app-filtro>
+<button *ngIf="mobile" (click)="openDialog()">Filtros</button>
+
+<div class="content" >
+    <app-filtro *ngIf="!mobile"></app-filtro>
     <div class="anuncios">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
         <app-card></app-card>
         <app-card></app-card>
         <app-card></app-card>
@@ -23,7 +20,6 @@
 
 <div class="carregar" [class.active]="isActive" (click)="activateLoading()">
     Carregar Mais
-  </div>
+</div>
   
-
 <app-footer></app-footer>

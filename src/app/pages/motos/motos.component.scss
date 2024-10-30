@@ -4,22 +4,77 @@
     display: flex;
     flex-direction: column;
     background-color: $Cor-Principal;
-    height: 100%;
+   
+    .anuncio{
+        display: flex ;
+        height: auto;
+        align-items: center;
+        justify-content: center;    
+        margin: auto 0;
+       
+        margin-top: 25px;
+            .left-image{
+                img{
+                    width: 815px;
+                    height: 475px;
+                    box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
+                }
+                
+            }
+            .rigth-image{
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+                margin-left: 2px;
+                img{
+                    max-width: 420px;
+                    box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
+                    overflow: hidden;
+                }
+
+                .image-container {
+                    display: flex;
+                    justify-content: center; /* Centraliza horizontalmente */
+                    align-items: center; /* Centraliza verticalmente */
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                  }
+                  
+                  .image-container img {
+                    width: 100%;
+                    height: auto;
+                    filter: brightness(30%);
+                  }
+                  
+                  .text-overlay {
+                    position: absolute;
+                    color: white;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 10px;
+                    font-size: 16px;
+                    border-radius: 5px;
+                  }
+                  
+            }
+    }
 
     .carousel{
-        width: 70%;
-        min-width: 320px;
-        max-width: 1400px;
-        margin: 0 auto;
-        margin-top: 50px;
-        border-radius: 15px;
+        width: 100%;
+        min-width: 300px;
+        max-width: 1000px;
+        border-radius: 5px;
         box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
         border: 1px solid $Cor-Secundaria;
-        overflow: hidden;
     }
 }
-@media (max-width: 400px){
+@media (max-width: 800px){
     :host{
-        height: 100vh;
+        height: auto;
+
+        .carousel{
+            width: 100%;
+            
+        }
     }
 }

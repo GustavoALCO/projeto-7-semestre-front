@@ -11,14 +11,5 @@ import { CardImageComponent } from './card-image/card-image.component';
 })
 export class FiltroComponent {
 
-  isActive: boolean = false;
-
-  activateLoading() {
-    this.isActive = true;
-
-    // Remove a classe 'active' após 2 segundos (tempo da animação)
-    setTimeout(() => {
-      this.isActive = false;
-    }, 2000);
-  }
+  
 }

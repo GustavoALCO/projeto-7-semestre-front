@@ -1,0 +1,87 @@
+@import '../../../styles.scss';
+
+:host{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: $Cor-Secundaria;
+    align-items: center;
+    .card{
+        width: 700px;
+        height: 700px;
+        margin: 0 auto;
+        border: solid 1px $Cor-Admin;
+        border-radius: 5px;
+        background-color: $Cor-Secundaria;
+        .top{
+           width: 70%;
+           margin: 0 auto;
+           margin-top: 10px;
+           border-radius: 5px;
+           overflow: hidden;
+
+           .carrousel{
+            overflow: hidden;
+            width: 100%;
+            border-bottom-right-radius: 5px;
+            height: 350px;
+           }
+
+            .Button{
+                font-weight: bold;
+                background-color: $Cor-Admin;
+                padding: 5px;
+                border-bottom-right-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+        }
+        .bottom{
+           display: flex;
+           flex-direction: column;
+            margin: 0 auto;
+            margin-top: 30px;
+            gap: 15px;
+            .inputs{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                gap: 10px;   
+
+                .example-form {
+                    min-width: 150px;
+                    max-width: 500px;
+                    width: 100%;
+                  }
+                  
+                  .example-full-width {
+                    width: 100%;
+                  }
+                
+            }
+
+            .buttons{
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                padding: 10px;
+                
+                .Cancel{
+                    background-color: $Cor-Secundaria;
+                    color: $Cor-Admin;
+                    border: solid 1px $Cor-Admin;
+                    height: 50px;
+                    width: 100px;
+                    border-radius: 10px;
+                }
+                .Confirm{
+                    background-color: $Cor-Admin;
+                    color: $Cor-Secundaria;
+                    font-weight: bold;
+                    height: 50px;
+                    width: 100px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+}

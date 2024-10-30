@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { CardComponent } from "./components/card/card.component";
 import { CarouselLojasComponent } from "./components/carousel-lojas/carousel-lojas.component";
-import {AgmCoreModule} from '@agm/core'
+
 import { AngularGoogleMapsComponent } from "./components/angular-google-maps/angular-google-maps.component";
 
 @Component({

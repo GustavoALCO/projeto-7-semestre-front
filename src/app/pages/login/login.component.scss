@@ -1,0 +1,56 @@
+@import '../../../styles.scss';
+
+:host{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: $Cor-Secundaria;
+    justify-content: center;
+    align-items: center;
+    .card{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border: solid 1px  $Cor-Admin;
+        height: 400px;
+        width: 350px;
+        background-color: $Cor-Secundaria;
+        
+        align-items: center;
+            img{
+                margin-top: 50px;
+                width: 100px;   
+            }
+            input{
+                border-radius: 15px;
+                padding: 5px;
+            }
+            input:focus{
+                outline: none; 
+            }
+            .buttons{
+                display: flex;
+                justify-content: space-around;
+                width: 70%;
+                .close{
+                    width: 60px;
+                    height: 35px;
+                    background-color: $Cor-Secundaria;
+                    color: $Cor-Admin;
+                    border: 1px solid $Cor-Admin;
+                    border-radius: 15px;
+                    font-weight: bold;
+                }
+                .enter{
+                    width: 60px;
+                    background-color: $Cor-Admin;
+                    border-radius: 15px;
+                    font-weight: bold;
+                }
+                button:active{
+                    position: relative;
+                    top: 1px;
+                }
+            }
+    }
+}

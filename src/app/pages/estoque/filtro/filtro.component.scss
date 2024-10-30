@@ -5,12 +5,11 @@
     flex-direction: column;
     border-radius: 15px;
     border: 1px solid black;
-    margin-left: 15px;
     width: 250px;
     height: 650px;
     background-color: $Cor-Card;
     padding-bottom: 20px;
-    
+    margin: 0 auto;
     .inputs{
         display: flex;
         justify-content: space-between;
@@ -72,4 +71,14 @@
         top: 1px;
         
       }
+}
+
+@media (max-width: 800px) {
+
+:host{
+    width: 250px;
+    height: 650px;
+    background-color: #faf9fd;
+    border: 0px solid black;
+}
 }

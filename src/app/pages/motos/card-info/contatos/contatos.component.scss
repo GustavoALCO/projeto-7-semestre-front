@@ -1,0 +1,42 @@
+@import '../../../../../styles.scss';
+
+.card {
+    border: solid 2px black;
+    width: 100%;
+    background-color: $Cor-Card;
+    display: flex;
+    margin: auto auto 0;
+
+    .bold{
+        font-weight: bold;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0 auto;
+        padding: 10px;
+        align-items: center;
+
+        .banner {
+            padding: 15px;
+            background-color: $Cor-Admin;
+            color: $Cor-Secundaria;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
+            margin-bottom: 15px;
+        }
+
+        .bold-card {
+            
+            font-weight: bold;
+        }
+        .image{
+            max-width: 20px;
+        }
+        .bold-banner{
+            font-weight: bold;
+        }
+    }
+}
