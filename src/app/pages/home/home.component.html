@@ -6,15 +6,18 @@
     </app-carousel-lojas>
 </div>
 <h3 style="font-weight: bold; margin: 0 auto; margin-top: 20px;">Mais Recentes</h3>
-<div class="destaque">
-    <app-card></app-card>
-    <app-card></app-card> 
-    <app-card></app-card> 
-    <app-card></app-card> 
-    <app-card></app-card> 
-    <app-card></app-card> 
-    <app-card></app-card> 
-    <app-card></app-card> 
+<div class="destaque" >
+    <div *ngFor="let moto of Motos">
+        <app-card 
+      [Img]="moto.url[0]"  
+      [Model]="moto.model"
+      [Brand]="moto.motoBrand"
+      [Km]="moto.km"
+      [Age]="moto.age"
+      [Price]="moto.price">
+    </app-card>
+    </div>
 </div>
+  
 
 <app-footer></app-footer>

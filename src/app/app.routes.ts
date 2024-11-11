@@ -10,7 +10,7 @@ import { AdmUsersComponent } from './pages/adm-users/adm-users.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'motos', component:MotosComponent},
+    {path: 'motos/:idMoto', component:MotosComponent},
     {path: 'estoque', component:EstoqueComponent},
     {path: 'contatos', component: ContatosComponent},
     {path: 'login', component:LoginComponent},

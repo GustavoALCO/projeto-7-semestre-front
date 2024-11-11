@@ -1,12 +1,12 @@
 <div class="up-card">
-    <img src="assets/images/teste.jpg" alt="">
+    <img src= "{{Img}} "alt="">
 </div>
 <div class="bottom-card">
-    <span class="bold">Broz 160</span>
-    <span class="marca">Honda</span>
+    <span class="bold">{{Model}}</span>
+    <span class="marca">{{Brand}}</span>
     <div class="info">
-        <span>160.000 km</span>
-        <span>2019</span>
+        <span>{{formatNumber(Km)}} km</span>
+        <span>{{Age}}</span>
     </div>
-    <span class="preco">R$: 12.000</span>
+    <span class="preco">R$: {{formatNumber(Price)}}</span>
 </div>

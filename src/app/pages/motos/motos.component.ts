@@ -8,6 +8,10 @@ import { CardInfoMobileComponent } from "./card-info-mobile/card-info-mobile.com
 import { CardComponent } from "../../components/card/card.component";
 import { DialogCarouselComponent } from './dialog-carousel/dialog-carousel.component';
 import { MatDialog } from '@angular/material/dialog';
+import { MotosService } from '../../Services/motos.service';
+import { Moto } from '../../models/Motos';
+import { ActivatedRoute } from '@angular/router';
+import { ImagesComponent } from "./images/images.component";
 
 @Component({
   selector: 'app-motos',
@@ -17,30 +21,39 @@ import { MatDialog } from '@angular/material/dialog';
     CardInfoComponent,
     CommonModule,
     CardInfoMobileComponent,
-    CardComponent],
+    CardComponent, ImagesComponent],
   templateUrl: './motos.component.html',
   styleUrl: './motos.component.scss'
 })
 export class MotosComponent {
+  Motos: Moto = {} as Moto;
 
-  breakpointObserver = inject(BreakpointObserver);
-  dialog = inject(MatDialog);
   mobile:boolean = false
 
-  constructor() {
+  ngOnInit(){
+    const id = this.route.snapshot.paramMap.get('idMoto');
+    if(id){
+      this.Motosid(id);
+    } 
+  }
+
+  constructor(
+    private motosService: MotosService, 
+    private route: ActivatedRoute,
+    private breakpointObserver: BreakpointObserver 
+  ) {
     this.breakpointObserver.observe([
-      '(max-width: 800px)' 
+      '(max-width: 900px)' 
     ]).subscribe((result: BreakpointState) => {
-        this.mobile = result.matches
+      this.mobile = result.matches;
     });
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogCarouselComponent, {
-      width: '80vw',   
-      height: 'auto',  
-      maxWidth: '2000px',  
-      maxHeight: '2000px',
-    });
+  Motosid(id: string) {
+    this.motosService.GetMotosId(id).subscribe(
+      motos => {
+        this.Motos = motos;
+      },
+    );
   }
 }

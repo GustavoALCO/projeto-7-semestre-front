@@ -15,25 +15,19 @@
         height: 400px;
         width: 350px;
         background-color: $Cor-Secundaria;
-        
         align-items: center;
+        
             img{
                 margin-top: 50px;
                 width: 100px;   
             }
-            input{
-                border-radius: 15px;
-                padding: 5px;
-            }
-            input:focus{
-                outline: none; 
-            }
+            
             .buttons{
                 display: flex;
                 justify-content: space-around;
                 width: 70%;
                 .close{
-                    width: 60px;
+                    width: 80px;
                     height: 35px;
                     background-color: $Cor-Secundaria;
                     color: $Cor-Admin;
@@ -42,7 +36,7 @@
                     font-weight: bold;
                 }
                 .enter{
-                    width: 60px;
+                    width: 80px;
                     background-color: $Cor-Admin;
                     border-radius: 15px;
                     font-weight: bold;

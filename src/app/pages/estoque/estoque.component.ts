@@ -6,6 +6,9 @@ import { FiltroComponent } from './filtro/filtro.component';
 import { CardComponent } from "../../components/card/card.component";
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import {MatDialog} from '@angular/material/dialog';
+import { Moto } from '../../models/Motos';
+import { MotosService } from '../../Services/motos.service';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -16,6 +19,7 @@ import {MatDialog} from '@angular/material/dialog';
             FooterComponent,
             FiltroComponent,
             CardComponent,
+            RouterLink
             ],
   templateUrl: './estoque.component.html',
   styleUrl: './estoque.component.scss'
@@ -24,20 +28,24 @@ export class EstoqueComponent {
   isActive: boolean = false;
   mobile:boolean = false;
 
+  Motos:Moto[] = []
+
   breakpointObserver = inject(BreakpointObserver);
   dialog = inject(MatDialog);
 
 
   activateLoading() {
     this.isActive = true;
-
-    // Remove a classe 'active' após 2 segundos (tempo da animação)
     setTimeout(() => {
       this.isActive = false;
     }, 2000);
   }
 
-  constructor() {
+  ngOnInit(){
+    this.buscarSemfiltro()
+  }  
+
+  constructor(private MotosService:MotosService) {
     this.breakpointObserver.observe([
       '(max-width: 800px)' 
     ]).subscribe((result: BreakpointState) => {
@@ -50,5 +58,16 @@ export class EstoqueComponent {
       width: '150px',
       height: "650px"
     });
+  }
+
+  buscarSemfiltro(){
+    try{
+      this.MotosService.GetMotosHome()
+        .subscribe( motos => this.Motos = motos);
+    }catch(error)
+    {
+      console.error('Erro ao obter motos:', error);
+    }
+    
   }
 }

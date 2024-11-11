@@ -1,33 +1,33 @@
 <div class="top">
     <div class="title">
-        <p class="bold" style="font-size: 2rem;">Nmax</p>
-        <p style="font-size: 1.2rem;">Yamaha</p>
+        <p class="bold" style="font-size: 2rem;">{{modelo}}</p>
+        <p style="font-size: 1.2rem;">{{marca}}</p>
     </div>
     <div class="preco">
-        <h6 class="price">R$ 13.000</h6>
+        <h6 class="price">{{formatNumber(preco)}}</h6>
     </div>
 </div>
 
 <div class="grid-container">
     <div class="grid-item">
         <span class="bold">Ano :</span> 
-        <p>2019</p>
+        <p>{{ano}}</p>
     </div>
     <div class="grid-item">
         <span class="bold">Km :</span> 
-        <p>13.000</p>
+        <p>{{formatNumber(km)}}</p>
     </div>
     <div class="grid-item">
         <span class="bold">Cor :</span> 
-        <p>Branco</p>
+        <p>{{cor}}</p>
     </div>
     <div class="grid-item">
         <span class="bold">Combustivel :</span> 
-        <p>Flex</p>
+        <p>{{combustivel}}</p>
     </div>
     <div class="grid-item">
-        <span class="bold">Final de Placa :</span> 
-        <p>1</p>
+        <span class="bold">Placa :</span> 
+        <p>{{placa}}</p>
     </div>
   </div>
 
@@ -41,11 +41,11 @@
     <div class="conteudo">
         <div class="contato">
             <img src="assets/images/WhatsApp.webp" style="width: 15px;">
-            <span style="font-weight: bold; font-size: 0.7rem;">(11) 94702-5724</span>
+            <span style="font-weight: bold; font-size: 0.7rem;">{{numero[0]}}</span>
         </div>
         <div class="contato">
             <img src="assets/images/phone-call.webp" style="width: 15px;">
-            <span style="font-weight: bold; font-size: 0.7rem;">(11) 94702-5724</span>
+            <span style="font-weight: bold; font-size: 0.7rem;">{{numero[1]}}</span>
         </div>
         <div class="contato">
             <img src="assets/images/PointerMap.webp" style="width: 15px;">

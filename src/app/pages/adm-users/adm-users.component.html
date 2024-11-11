@@ -1,10 +1,19 @@
 <div class="container">
     <div class="inputs">
-        <app-input-adm lable="Nome"></app-input-adm>
-        <app-input-adm lable="Sobrenome"></app-input-adm>
+        <mat-form-field class="example-full-width">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="Sushi" >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Sobrenome</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="Sushi" >
+        </mat-form-field>
         <app-input-cargo></app-input-cargo>
         <app-input-loja></app-input-loja>
-        <app-input-adm lable="Login"></app-input-adm>
+        <mat-form-field class="example-full-width">
+            <mat-label>Favorite food</mat-label>
+            <input matInput placeholder="Ex. Pizza" value="Sushi" >
+        </mat-form-field>
         <app-password-input></app-password-input>
     </div>
     <div class="buttons">

@@ -1,16 +1,36 @@
 <app-navbar></app-navbar>
 
-<div class="anuncio">
-    <div class="left-image">
-        <img src="https://imperiomotoszn.com.br/dados/auto/thumbnails/EX20240712121630_300x230_w_dd0bf011610f382d2081b47ddec10d8e.jpeg" alt="">
+  <div class="anuncio">
+    <div *ngIf="Motos && !mobile">
+      <app-images [images]="Motos.url"></app-images>  
     </div>
-    <div class="rigth-image">
-        <img src="https://motoractionbrasil.com.br/wp-content/uploads/2023/04/r-1250-gs-bmw-800x420-1-720x405.jpeg" alt="">
-        <div class="image-container" (click)="openDialog()">
-            <img src="https://motoractionbrasil.com.br/wp-content/uploads/2023/04/r-1250-gs-bmw-800x420-1-720x405.jpeg" alt="Imagem">
-            <span class="text-overlay">Texto em cima da imagem</span>
-          </div>          
+
+    <div  *ngIf="Motos && mobile">
+      <app-carousel-motos [images]="Motos.url"></app-carousel-motos>
     </div>
-</div>
-<app-card-info *ngIf="!mobile"></app-card-info>
-<app-card-info-mobile *ngIf="mobile"></app-card-info-mobile>
+
+  </div>
+
+  <app-card-info *ngIf="!mobile && Motos"
+                        [ano]="Motos.age"
+                        [combustivel]="Motos.fuel"
+                        [cor]="Motos.color"
+                        [km]="Motos.km"
+                        [marca]="Motos.motoBrand"
+                        [modelo]="Motos.model"
+                        [numero]="Motos.phoneNumbers"
+                        [placa]="Motos.plate"
+                        [preco]="Motos.price"></app-card-info>
+
+
+  <app-card-info-mobile *ngIf="mobile && Motos"
+  [ano]="Motos.age"
+  [combustivel]="Motos.fuel"
+  [cor]="Motos.color"
+  [km]="Motos.km"
+  [marca]="Motos.motoBrand"
+  [modelo]="Motos.model"
+  [numero]="Motos.phoneNumbers"
+  [placa]="Motos.plate"
+  [preco]="Motos.price">
+                      </app-card-info-mobile>

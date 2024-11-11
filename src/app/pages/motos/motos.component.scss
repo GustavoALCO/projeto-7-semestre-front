@@ -1,80 +1,98 @@
 @import '../../../styles.scss';
 
-:host{
+:host {
+  display: flex;
+  flex-direction: column;
+  background-color: $Cor-Principal;
+  width: 100%;
+  min-height: 100vh;
+  .anuncio {
     display: flex;
-    flex-direction: column;
-    background-color: $Cor-Principal;
-   
-    .anuncio{
-        display: flex ;
-        height: auto;
-        align-items: center;
-        justify-content: center;    
-        margin: auto 0;
-       
-        margin-top: 25px;
-            .left-image{
-                img{
-                    width: 815px;
-                    height: 475px;
-                    box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
-                }
-                
-            }
-            .rigth-image{
-                display: flex;
-                flex-direction: column;
-                gap: 2px;
-                margin-left: 2px;
-                img{
-                    max-width: 420px;
-                    box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
-                    overflow: hidden;
-                }
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
 
-                .image-container {
-                    display: flex;
-                    justify-content: center; /* Centraliza horizontalmente */
-                    align-items: center; /* Centraliza verticalmente */
-                    position: relative;
-                    width: 100%;
-                    height: auto;
-                  }
-                  
-                  .image-container img {
-                    width: 100%;
-                    height: auto;
-                    filter: brightness(30%);
-                  }
-                  
-                  .text-overlay {
-                    position: absolute;
-                    color: white;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    padding: 10px;
-                    font-size: 16px;
-                    border-radius: 5px;
-                  }
-                  
-            }
-    }
-
-    .carousel{
-        width: 100%;
-        min-width: 300px;
-        max-width: 1000px;
-        border-radius: 5px;
+    .left-image {
+      img {
+        width: 815px;
+        height: 475px;
         box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
-        border: 1px solid $Cor-Secundaria;
+      }
     }
-}
-@media (max-width: 800px){
-    :host{
-        height: auto;
 
-        .carousel{
-            width: 100%;
-            
-        }
+    .right-image {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-left: 2px;
+
+      img {
+        box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
+        width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+        height: auto; /* Mantém a altura proporcional */
+      }
+
+      .image-container {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+
+      .image-container img {
+        width: 100%; /* Faz a imagem ocupar toda a largura disponível */
+        height: auto;
+        filter: brightness(30%);
+      }
+
+      .text-overlay {
+        position: absolute;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+      }
     }
+  }
+
+  .carousel {
+    width: 100%;
+    min-width: 300px;
+    max-width: 1000px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
+    border: 1px solid $Cor-Secundaria;
+  }
+}
+
+@media (max-width: 800px) {
+  :host {
+   
+    .teste{
+      margin: auto 0;
+    }
+    .carousel {
+      width: 100%;
+    }
+
+    .anuncio {
+      flex-direction: column; /* Coloca as imagens em uma coluna em telas pequenas */
+      align-items: center; /* Centraliza as imagens */
+      
+    }
+
+    .left-image img {
+      width: 100%; /* Ajusta a largura da imagem para 100% na tela pequena */
+      height: auto; /* Mantém a proporção da imagem */
+    }
+
+    .right-image img {
+      width: 100%; /* Ajusta a largura da imagem para 100% na tela pequena */
+      height: auto; /* Mantém a proporção da imagem */
+    }
+  }
 }

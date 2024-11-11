@@ -1,10 +1,18 @@
 <div class="card">
     <img src="assets/images/logo.webp" alt="">
-    <input type="text" placeholder="Login">
-    <input type="text" placeholder="Password">
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Login</mat-label>
+        <input matInput placeholder="Exemplo" [(ngModel)]="user">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide() ? 'password' : 'text'" [(ngModel)]="password"/>
+      </mat-form-field>
     
     <div class="buttons">
-        <button class="close">Exit</button>
-        <button class="enter">Enter</button>
+        <button class="close" routerLink="">Exit</button>
+        <button class="enter" (click)="login()">Enter</button>
     </div>
 </div>
