@@ -1,0 +1,29 @@
+<div class="topcard">
+    <h6>{{data.model}}</h6>
+
+    <app-carousel-motos [images]="data.url"></app-carousel-motos>
+</div>
+<p style="text-align: center; margin-top: 5px;">Id : {{data.idMoto}}</p>
+<div class="info">
+    <p>Fabricante : {{data.motoBrand}}</p>
+    <p>Ano : {{data.age}}</p>
+    <p>Cor : {{data.color}}</p>
+    <p>Combustível : {{data.fuel}}</p>
+    <p>Km : {{data.km}}</p>
+    <p>Preço : {{formattedPrice}}</p>
+    <p>Placa : {{data.plate}}</p>
+    <!-- <p>{{data.}}</p> -->
+</div>
+<div class="audience">
+    <p class="bold" style="margin-top: 10px;">Usuario que alterou por ultimo</p>
+
+    <span>{{data.alterationUserId}}</span>
+    <p class="bold">Data da alteração</p>
+
+    <span>{{data.dateUpdate}}</span>
+    <p class="bold">Usuario que Criou o Anuncio</p>
+    <span>{{data.createUserId}}</span>
+    <p class="bold">Data da Criação</p>
+    <span>{{data.dateUpload}}</span>
+</div>
+

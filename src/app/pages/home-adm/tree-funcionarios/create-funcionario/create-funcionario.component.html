@@ -1,0 +1,40 @@
+<div class="card">
+  <h5>Funcionarios</h5>
+  <div class="inputs">
+  
+  <mat-form-field class="example-full-width">
+      <mat-label>ID da Loja</mat-label>
+      <input matInput placeholder="Ex. 1" [(ngModel)]="idStore" type="number">
+  </mat-form-field>
+  
+  <mat-form-field class="example-full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Ex. João" [(ngModel)]="name">
+  </mat-form-field>
+  
+  <mat-form-field class="example-full-width">
+      <mat-label>Sobrenome</mat-label>
+      <input matInput placeholder="Ex. Silva" [(ngModel)]="lastName">
+  </mat-form-field>
+  
+  <mat-form-field class="example-full-width">
+      <mat-label>Cargo</mat-label>
+      <input matInput placeholder="Ex. Administrador" [(ngModel)]="role">
+  </mat-form-field>
+  
+  <mat-form-field class="example-full-width">
+      <mat-label>Login</mat-label>
+      <input matInput placeholder="Ex. joao.silva" [(ngModel)]="login">
+  </mat-form-field>
+  
+  <mat-form-field class="example-full-width" *ngIf="id === null">
+      <mat-label>Senha</mat-label>
+      <input matInput placeholder="Digite sua senha" [(ngModel)]="password" type="password">
+  </mat-form-field>
+
+</div>
+ <div class="buttons">
+      <button class="Cancel" (click)="voltar()">Voltar</button>
+      <button class="Confirm" *ngIf="id === null" (click)="Create()">Criar</button>
+      <button class="Confirm" *ngIf="id" (click)="alteration()">Alterar</button>
+  </div>  

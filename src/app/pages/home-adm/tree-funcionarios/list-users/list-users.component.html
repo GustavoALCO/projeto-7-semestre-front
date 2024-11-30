@@ -1,0 +1,54 @@
+<div class="left-div">
+    <div class="top-div">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Ex. João Silva" [(ngModel)]="nome">
+      </mat-form-field>
+      <button (click)="buscarUser()">Buscar</button>
+    </div>
+    <div class="center-div">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+        <!-- ID do Usuário -->
+        <ng-container matColumnDef="idUser">
+          <th mat-header-cell *matHeaderCellDef> ID Usuário </th>
+          <td mat-cell *matCellDef="let element"> {{element.idUser}} </td>
+        </ng-container>
+        
+        <!-- ID da Loja -->
+        <ng-container matColumnDef="idStore">
+          <th mat-header-cell *matHeaderCellDef> Loja </th>
+          <td mat-cell *matCellDef="let element"> {{element.idStore}} </td>
+        </ng-container>
+        
+        <!-- Nome -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Nome </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        
+        <!-- Sobrenome -->
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef> Sobrenome </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+        
+        <!-- Cargo -->
+        <ng-container matColumnDef="role">
+          <th mat-header-cell *matHeaderCellDef> Cargo </th>
+          <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+        </ng-container>
+        
+        <!-- Login -->
+        <ng-container matColumnDef="login">
+          <th mat-header-cell *matHeaderCellDef> Login </th>
+          <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+        </ng-container>
+  
+        <!-- Header e Rows -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+      </table>
+    </div>
+  </div>
+  

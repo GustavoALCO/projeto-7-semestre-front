@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import {GoogleMap, GoogleMapsModule, MapCircle, MapInfoWindow, MapMarker} from "@angular/google-maps";
+import {GoogleMapsModule} from "@angular/google-maps";
 
 @Component({
   selector: 'app-angular-google-maps',

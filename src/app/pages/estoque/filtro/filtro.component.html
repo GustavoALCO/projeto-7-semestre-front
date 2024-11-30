@@ -1,34 +1,44 @@
 <span class="Titulos">Marcas</span>
 <div class="marcas">
-    <app-card-image Image="assets/images/marcas/Bajaj.webp"></app-card-image>
-    <app-card-image Image="assets/images/marcas/Bmw.webp"></app-card-image>
-    <app-card-image Image="assets/images/marcas/Dafra.webp"></app-card-image>
-    <app-card-image Image="assets/images/marcas/Harley.webp"></app-card-image>
-    <app-card-image Image="assets/images/marcas/Honda.webp"></app-card-image>
-    <app-card-image Image="assets/images/marcas/Suzuki.webp"></app-card-image>
-    <app-card-image Image="assets/images/marcas/Triumph.webp"></app-card-image>
-    <app-card-image Image="assets/images/marcas/Yamaha.webp"></app-card-image>
+    <app-card-image Image="assets/images/marcas/Bajaj.webp" (nome)="onParametersReceived($event)"></app-card-image>
+    <app-card-image Image="assets/images/marcas/Bmw.webp" (nome)="onParametersReceived($event)"></app-card-image>
+    <app-card-image Image="assets/images/marcas/Dafra.webp" (nome)="onParametersReceived($event)"></app-card-image>
+    <app-card-image Image="assets/images/marcas/Harley.webp" (nome)="onParametersReceived($event)"></app-card-image>
+    <app-card-image Image="assets/images/marcas/Honda.webp" (nome)="onParametersReceived($event)"></app-card-image>
+    <app-card-image Image="assets/images/marcas/Suzuki.webp" (nome)="onParametersReceived($event)"></app-card-image>
+    <app-card-image Image="assets/images/marcas/Triumph.webp" (nome)="onParametersReceived($event)"></app-card-image>
+    <app-card-image Image="assets/images/marcas/Yamaha.webp" (nome)="onParametersReceived($event)"></app-card-image>
 </div>
+    <span class="Titulos">Buscar modelo</span>
+    <div class="input">
+        <input type="text" placeholder="Ex. Cg 150" [(ngModel)]="model" >
+    </div>
 
-<span class="Titulos">Ano</span>
-<div class="inputs">
-    <input type="text" placeholder="1980">
-    <span style="font-size: 0.7rem; margin: 0 auto; padding: 5px;">Até</span>
-    <input type="text" placeholder="2024">
-</div>
+    <span class="Titulos">Cor</span>
+    <div class="input">
+        <input type="text" placeholder="Ex. Branco" [(ngModel)]="color" >
+    </div>
 
-<span class="Titulos">Km</span>
-<div class="inputs">
-    <input type="text" placeholder="1.000">
-    <span style="font-size: 0.7rem; margin: 0 auto; padding: 5px;">Até</span>
-    <input type="text" placeholder="10.000">
-</div>
+    <span class="Titulos">Ano</span>
+    <div class="inputs">
+        <input type="text" placeholder="1980" maxlength="4" inputmode="numeric" (input)="validateInput($event, 'year1')">
+        <span style="font-size: 0.7rem; margin: 0 auto; padding: 5px;">Até</span>
+        <input type="text" placeholder="1980" maxlength="4" inputmode="numeric" (input)="validateInput($event, 'year2')">
+    </div>
 
-<span class="Titulos">Preço</span>
-<div class="inputs">
-    <input type="text" placeholder="R$ 5.000">
-    <span style="font-size: 0.7rem; margin: 0 auto; padding: 5px;">Até</span>
-    <input type="text" placeholder="R$ 60.000">
-</div>
+    <span class="Titulos">Km</span>
+    <div class="inputs">
+        <input type="text" placeholder="1.000" maxlength="6" (input)="validateInput($event, 'km1')">
+        <span style="font-size: 0.7rem; margin: 0 auto; padding: 5px;">Até</span>
+        <input type="text" placeholder="10.000" maxlength="6" (input)="validateInput($event, 'km2')">
+    </div>
 
-<button class="buscar">Buscar</button>
+    <span class="Titulos">Preço</span>
+    <div class="inputs">
+        <input type="text" placeholder="R$ 5.000" maxlength="6" (input)="validateInput($event, 'price1')">
+        <span style="font-size: 0.7rem; margin: 0 auto; padding: 5px;">Até</span>
+        <input type="text" placeholder="R$ 60.000" maxlength="6" (input)="validateInput($event, 'price2')">
+    </div>
+
+    <button class="buscar" (click)="enviarFiltros()">Buscar</button>
+

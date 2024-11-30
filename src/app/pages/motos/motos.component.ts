@@ -6,8 +6,6 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { CommonModule } from '@angular/common';
 import { CardInfoMobileComponent } from "./card-info-mobile/card-info-mobile.component";
 import { CardComponent } from "../../components/card/card.component";
-import { DialogCarouselComponent } from './dialog-carousel/dialog-carousel.component';
-import { MatDialog } from '@angular/material/dialog';
 import { MotosService } from '../../Services/motos.service';
 import { Moto } from '../../models/Motos';
 import { ActivatedRoute } from '@angular/router';
@@ -21,7 +19,7 @@ import { ImagesComponent } from "./images/images.component";
     CardInfoComponent,
     CommonModule,
     CardInfoMobileComponent,
-    CardComponent, ImagesComponent],
+    ImagesComponent],
   templateUrl: './motos.component.html',
   styleUrl: './motos.component.scss'
 })
@@ -32,6 +30,7 @@ export class MotosComponent {
 
   ngOnInit(){
     const id = this.route.snapshot.paramMap.get('idMoto');
+
     if(id){
       this.Motosid(id);
     } 

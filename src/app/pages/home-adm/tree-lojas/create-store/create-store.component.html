@@ -1,0 +1,35 @@
+<div class="card">
+    <h5>Lojas</h5>
+    <div class="inputs">
+        <mat-form-field class="example-full-width">
+            <mat-label>Endereço</mat-label>
+            <input matInput placeholder="Ex. Av. Guapira" [(ngModel)]="Adress">
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+            <mat-label>Numero</mat-label>
+            <input matInput placeholder="Ex. 98" maxlength="4"[(ngModel)]="AdressNumber">
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+            <mat-label>CEP</mat-label>
+            <input matInput placeholder="Ex. 02265-002" maxlength="9"[(ngModel)]="CEP" [dropSpecialCharacters]="false" mask="00000-000">
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+            <mat-label>Telefone</mat-label>
+            <input matInput placeholder="Ex. (11) 2939-8645" maxlength="14"[(ngModel)]="phoneNumber1" [dropSpecialCharacters]="false" mask="(00) 0000-0000">
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+            <mat-label>Celular</mat-label>
+            <input matInput placeholder="Ex. (11) 2939-8645" maxlength="15"[(ngModel)]="phoneNumber2" [dropSpecialCharacters]="false" mask="(00) 00000-0000">
+        </mat-form-field>
+    </div>
+    <div class="buttons">
+        <button class="Cancel" (click)="voltar()">Voltar</button>
+        <button class="Confirm" *ngIf="id === null" (click)="Create()">Criar</button>
+        <button class="Confirm" *ngIf="id" (click)="alteration()">Alterar</button>
+    </div>  
+</div>
+  

@@ -3,10 +3,10 @@
       <li>
         <span class="Title" (click)="toggle()">Lojas</span> <!-- O click na main controla a visibilidade -->
         <ul [ngClass]="{ 'collapsed': isCollapsed }"> <!-- Controle de exibição com ngClass -->
-          <li><span>Criar Nova Loja</span></li>
-            <li><span>Alterar Loja</span></li>
-            <li><span>Listar Todos as Lojas</span></li>
-            <li><span>Excluir</span></li>
+          <li (click) ="CreateStore()"><span>Criar Nova Loja</span></li>
+            <li><span (click)="openDialog()">Alterar Loja</span></li>
+            <li><span (click)="ListStore()">Listar Todos as Lojas</span></li>
+            <li><span (click)="deletar()">Excluir</span></li>
         </ul>
       </li>
     </ul>

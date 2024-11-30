@@ -1,0 +1,34 @@
+@import '../../../../../../styles.scss';
+:host{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #070707ea;
+    border-radius: 28px;
+    border: solid 2px $Cor-Admin;
+    padding-top: 15px;
+    color: #f0f8ff;
+
+    .topcard{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .info{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+    }
+    .audience{
+        border-top: solid 1px #f0f8ff;
+        .bold{
+            font-weight: bold;
+        }
+        text-align: center;
+        span{
+            margin-bottom: 5px;
+        }
+    }
+}

@@ -3,10 +3,11 @@
       <li>
         <span class="Title" (click)="toggle()">Funcionarios</span> <!-- O click na main controla a visibilidade -->
         <ul [ngClass]="{ 'collapsed': isCollapsed }"> <!-- Controle de exibição com ngClass -->
-          <li><span>Novo Funcionario</span></li>
-            <li><span>Alterar Funcionario</span></li>
-            <li><span>Listar Todos os Funcionarios</span></li>
-            <li><span>Excluir</span></li>
+          <li><span (click)="Create()">Novo Funcionario</span></li>
+            <li><span (click)="alterar()">Alterar Funcionario</span></li>
+            <li><span (click)="AlterarSenha()">Alterar Senha</span></li>
+            <li><span (click)="ListarUsuarios()">Listar Todos os Funcionarios</span></li>
+            <li><span (click)="excluir()">Excluir</span></li>
         </ul>
       </li>
     </ul>

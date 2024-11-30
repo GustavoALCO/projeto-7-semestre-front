@@ -8,23 +8,21 @@
     align-items: center;
     .card{
         width: 700px;
-        height: 700px;
+        height: 720px;
         margin: 0 auto;
         border: solid 1px $Cor-Admin;
         border-radius: 5px;
         background-color: $Cor-Secundaria;
         .top{
-           width: 70%;
+           width: 65%;
+           height: 488px;
            margin: 0 auto;
            margin-top: 10px;
            border-radius: 5px;
-           overflow: hidden;
 
            .carrousel{
-            overflow: hidden;
+            
             width: 100%;
-            border-bottom-right-radius: 5px;
-            height: 350px;
            }
 
             .Button{
@@ -39,13 +37,21 @@
            display: flex;
            flex-direction: column;
             margin: 0 auto;
-            margin-top: 30px;
+            margin-top: 10px;
             gap: 15px;
             .inputs{
                 display: grid;
                 grid-template-columns: repeat(3,1fr);
                 gap: 10px;   
-
+                
+                
+                ::-webkit-input-placeholder{
+                    font-size: 0.8rem;
+                }
+                ::-moz-placeholder { 
+                    font-size: 0.8rem;
+                  }
+                
                 .example-form {
                     min-width: 150px;
                     max-width: 500px;
@@ -80,6 +86,10 @@
                     width: 100px;
                     border-radius: 10px;
                 }
+            }
+            button:active{
+                position: relative;
+                top: 1px;
             }
         }
     }

@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { CarouselLojasComponent } from '../../components/carousel-lojas/carousel-lojas.component';
 import { CardComponent } from '../../components/card/card.component';
 import { FooterComponent } from "../../components/footer/footer.component";
-import { HttpClientModule } from '@angular/common/http';
 import { MotosService } from '../../Services/motos.service';
 import { Moto } from '../../models/Motos';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,25 +15,27 @@ import { CommonModule } from '@angular/common';
             CarouselLojasComponent,
             CardComponent,
             FooterComponent,
-            CommonModule],
+            CommonModule,
+          RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 
   Motos:Moto[] =[]
-
-  constructor(private motosService: MotosService) { }
+  model:string = ''
+  page:number = 1
+  
+  private motosService = inject(MotosService)
 
   
   ngOnInit(){
     this.obterMotos();
-  
   }
 
   obterMotos() {
     try{
-      this.motosService.GetMotosHome()
+      this.motosService.GetMotosModel(this.model, this.page)
       .subscribe(motos => this.Motos = motos);
     }catch(error)
     {

@@ -1,0 +1,79 @@
+@import '../../../../../styles.scss';
+
+:host{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: $Cor-Secundaria;
+    align-items: center;
+    
+    .card{
+        width: 700px;
+        height: 720px;
+        margin: 0 auto;
+        border: solid 1px $Cor-Admin;
+        border-radius: 5px;
+        background-color: $Cor-Secundaria;
+        color: aliceblue;
+        justify-content: center;
+        text-align: center;
+        h5{
+            margin-bottom: 80px;
+        }
+        .inputs{
+            display: grid;
+            width: 90%;
+            grid-template-columns: repeat(2,1fr);
+            margin: 0 auto;
+            margin-bottom: 80px;
+            gap: 10px;   
+            
+            
+            ::-webkit-input-placeholder{
+                font-size: 0.8rem;
+            }
+            ::-moz-placeholder { 
+                font-size: 0.8rem;
+              }
+            
+            .example-form {
+                min-width: 150px;
+                max-width: 500px;
+                width: 100%;
+              }
+              
+              .example-full-width {
+                width: 100%;
+              }
+            
+        }
+
+        .buttons{
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 10px;
+            
+            .Cancel{
+                background-color: $Cor-Secundaria;
+                color: $Cor-Admin;
+                border: solid 1px $Cor-Admin;
+                height: 50px;
+                width: 100px;
+                border-radius: 10px;
+            }
+            .Confirm{
+                background-color: $Cor-Admin;
+                color: $Cor-Secundaria;
+                font-weight: bold;
+                height: 50px;
+                width: 100px;
+                border-radius: 10px;
+            }
+        }
+        button:active{
+            position: relative;
+            top: 1px;
+        }
+    }
+}

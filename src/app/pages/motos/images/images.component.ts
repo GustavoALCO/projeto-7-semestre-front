@@ -1,7 +1,9 @@
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Component, inject, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogCarouselComponent } from '../dialog-carousel/dialog-carousel.component';
+import { CardImageComponent } from '../../estoque/filtro/card-image/card-image.component';
+import { CardComponent } from '../../../components/card/card.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @Component({
   selector: 'app-images',
@@ -23,14 +25,12 @@ dialog = inject(MatDialog);
     ])
   }
 
-
-
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogCarouselComponent, {
+    const dialogRef = this.dialog.open(CarouselComponent, {
       width: '80vw',   
       height: 'auto',  
-      maxWidth: '2000px',  
-      maxHeight: '2000px',
+      maxWidth: '1000px',  
+      
       data: {images : this.images}
     });
   }

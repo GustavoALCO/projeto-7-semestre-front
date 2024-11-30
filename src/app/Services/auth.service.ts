@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { catchError, map, Observable, of } from 'rxjs';
 import { environment } from '../../environments/enviroument';
+import {jwtDecode} from 'jwt-decode';
+
 
 export interface Login {
     token: string; 
@@ -12,11 +14,13 @@ export interface Login {
 })
 export class AuthService {
 
-    private apiUrl = `${environment.Apiurl}/Login`;
+    private apiUrl = `${environment.Apiurl}`;
 
-    constructor(private http: HttpClient) { }
+    private readonly http = inject(HttpClient)
 
     Login(user: string, password: string): Observable<Login> { 
+        const url = `${this.apiUrl}/Login`
+        
         const body = {
             login: user,
             password: password
@@ -25,15 +29,54 @@ export class AuthService {
         const headers = new HttpHeaders({
             'Content-Type': 'application/json'
         });
-        console.log(this.apiUrl, body, { headers })
-        return this.http.post<Login>(this.apiUrl, body, { headers });
+
+        console.log(this.apiUrl, body)
+        return this.http.post<Login>(url, body , {headers}).pipe(
+            //faz chamada http
+            map(resp => {
+                localStorage.setItem("jwt", resp.token); 
+                return resp;
+            })
+        );
     }
 
-    setToken(token: string): void {
-        localStorage.setItem('jwt', token); 
+    VerifyToken(): Observable<boolean>{
+
+        const url = this.apiUrl + "/VerifyToken";
+
+        const token = localStorage.getItem("jwt");
+        if (!token) {
+            console.error("Token JWT não encontrado.");
+            return of(false); // Retorna false se o token for existir
+        }
+
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        });
+
+        return this.http.get(url, { headers, observe: 'response'}).pipe(
+            map((response) => {
+                if (response.status === 200) {
+                    console.log("Token válido.");
+                    return true;
+                } 
+                return false
+            }),
+            catchError((error) => {
+              return of(false); // Retorna false em caso de erro
+            })
+          );
     }
 
-    getToken(): string | null {
-        return localStorage.getItem('jwt');
+    getIdPayload(): string {
+        const token = localStorage.getItem("jwt");
+
+        if(!token)
+            return '';
+
+        const decode: any = jwtDecode(token);
+
+        return decode.id
     }
 }

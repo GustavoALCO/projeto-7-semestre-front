@@ -18,9 +18,10 @@
                         [km]="Motos.km"
                         [marca]="Motos.motoBrand"
                         [modelo]="Motos.model"
-                        [numero]="Motos.phoneNumbers"
+                        [numero]="Motos.phoneNumber"
                         [placa]="Motos.plate"
-                        [preco]="Motos.price"></app-card-info>
+                        [preco]="Motos.price"
+                        ></app-card-info>
 
 
   <app-card-info-mobile *ngIf="mobile && Motos"
@@ -30,7 +31,7 @@
   [km]="Motos.km"
   [marca]="Motos.motoBrand"
   [modelo]="Motos.model"
-  [numero]="Motos.phoneNumbers"
+  [numero]="Motos.phoneNumber"
   [placa]="Motos.plate"
   [preco]="Motos.price">
                       </app-card-info-mobile>

@@ -15,7 +15,7 @@ export interface Moto {
     dateUpdate: Date,
     alterationUserId: string,
     idStore: number
-    phoneNumbers:string[]
+    phoneNumber:string[]
 }
 
 export interface MotoCreate {

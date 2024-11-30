@@ -1,10 +1,10 @@
 <div class="card">
     <div class="top">
         <div class="carrousel">
-            <app-carousel-motos></app-carousel-motos>
+            <app-carousel-motos [images]="Base64Images"></app-carousel-motos>
             <label class="Button">
               Escolha as Imagens
-              <input type="file"  multiple hidden>
+              <input type="file"  multiple hidden (change)="onFilesChange($event)">
           </label>
         </div>
         
@@ -12,43 +12,79 @@
     </div>
     <div class="bottom">
         <div class="inputs">
-          <app-input-marcas></app-input-marcas>
-                
-          <app-input-fuel></app-input-fuel>
+          <mat-form-field class="example-full-width">
+            <mat-label>Fabricantes</mat-label>
+            <input type="text"
+                   placeholder="Escolha uma Fabricante"
+                   aria-label="Fabricantes"
+                   matInput
+                   [(ngModel)]="Brands"
+                   [formControl]="myControlBrands"
+                   [matAutocomplete]="autoBrands">
+            <mat-autocomplete #autoBrands="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptionsBrands | async" [value]="option.brands">
+                {{option.brands}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
           
           <mat-form-field class="example-full-width">
+            <mat-label>Combustível</mat-label>
+            <input type="text"
+                   placeholder="Escolha um Combustível"
+                   aria-label="Combustível"
+                   matInput
+                   [(ngModel)]="Fuel"
+                   [formControl]="myControlFuel"
+                   [matAutocomplete]="autoFuel">
+            <mat-autocomplete #autoFuel="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptionsFuel | async" [value]="option.fuel">
+                {{option.fuel}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        
+          <!-- Botoes com opção de escolha -->
+           
+          <mat-form-field class="example-full-width">
             <mat-label>Km</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
+            <input matInput placeholder="Ex. 13000" [(ngModel)]="Km" maxlength="7">
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Modelo</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
+            <input matInput placeholder="Ex. CG 150" [(ngModel)]="Modelo">
           </mat-form-field>
           
           <mat-form-field class="example-full-width">
             <mat-label>Cor</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
+            <input matInput placeholder="Ex. Branco" [(ngModel)]="Color">
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Ano</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
+            <input matInput placeholder="Ex. 2024" maxlength="4"[(ngModel)]="Year">
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Placa</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
+            <input matInput (input)="plateEvent($event)" placeholder="ABC-1234 ou ABC-1D23" [(ngModel)]="Plate" maxlength="8" style="text-transform: uppercase;">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Loja</mat-label>
+            <input matInput placeholder="Ex. 1" [(ngModel)]="Store" maxlength="7">
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Preço</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
+            <input matInput placeholder="Ex. 13500" [(ngModel)]="Price" maxlength="7">
           </mat-form-field>
         </div>
         <div class="buttons">
-            <button class="Cancel">Voltar</button>
-            <button class="Confirm">Criar</button>
+            <button class="Cancel" (click)="voltar()">Voltar</button>
+            <button class="Confirm" *ngIf="id === null" (click)="Create()">Criar</button>
+            <button class="Confirm" *ngIf="id" (click)="alteration()">Alterar</button>
         </div>
 
     </div>

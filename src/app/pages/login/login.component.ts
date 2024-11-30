@@ -1,42 +1,44 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { AuthService } from '../../Services/auth.service';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule} from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
-
+import { MatFormFieldModule, MatLabel} from '@angular/material/form-field';
+import { RouterLink, Router } from '@angular/router';
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatIconModule, RouterLink],
+  imports: [MatFormFieldModule, MatLabel,MatInput, FormsModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+
   user!: string
   password!:string
 
-  constructor( private auth: AuthService) { }
+  private readonly _router = inject(Router);
+  //variavel para navegação das rotas
+  
+  private auth =  inject(AuthService);
 
  
   hide = signal(true);
 
   login() {
     this.auth.Login(this.user, this.password).subscribe({
-      next: (response) => {
-        console.log("Login bem-sucedido:", response);
-        const token = response.token;
-        this.auth.setToken(token);
-        localStorage.setItem('jwt', token); 
-        console.log('Token armazenado:', token);
-        
+      next: (_) => {
+        this._router.navigate(["adm"]);
       },
       error: (error) => {
-        console.error("Erro ao fazer login:", error);
+        const errorMessage = error.error?.message || "Erro ao fazer login. Verifique as credenciais e tente novamente.";
+      alert(`Erro ao fazer login: ${errorMessage}`);
       }
     });
   } 
+
+  Home() {
+    this._router.navigate([""]);
+    }
 }

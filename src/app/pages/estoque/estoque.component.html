@@ -3,7 +3,7 @@
 <button *ngIf="mobile" (click)="openDialog()">Filtros</button>
 
 <div class="content" >
-    <app-filtro *ngIf="!mobile"></app-filtro>
+    <app-filtro *ngIf="!mobile" (filterData)="onParametersReceived($event)" ></app-filtro>
     <div class="anuncios">
         <div *ngFor="let moto of Motos">
             
@@ -21,7 +21,7 @@
     </div>
 </div>
 
-<div class="carregar" [class.active]="isActive" (click)="activateLoading()">
+<div class="carregar" *ngIf="errorCode === undefined || errorCode === 200" [class.active]="isActive" (click)="activateLoading()">
     Carregar Mais
 </div>
   

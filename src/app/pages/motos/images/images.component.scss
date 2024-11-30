@@ -1,16 +1,16 @@
 .host{
     display: flex;
-    background-color: rgba(0, 0, 0, 0.685);
+
     border-radius: 5px;
     overflow: hidden;
 }
 .left-image {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    overflow: hidden;
+    
     img {
-      width: 815px;
-      height: 475px;
+      width: 800px;
+      height: auto;
+      border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
       box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
     }
   }
@@ -18,9 +18,9 @@
   .right-image {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
     margin-left: 2px;
-    width: 415px;
+    width: 400px;
     img {
       box-shadow: 3px 3px 3px 0px rgba(9, 0, 0, 0.62);
       width: 100%; /* Faz a imagem ocupar toda a largura disponível */
